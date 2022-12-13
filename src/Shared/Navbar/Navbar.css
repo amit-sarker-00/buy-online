@@ -1,0 +1,6 @@
+.nav li:hover {
+  color: #00cf5d;
+}
+.nav:active {
+  color: #00cf5d;
+}

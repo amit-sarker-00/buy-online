@@ -18,7 +18,7 @@ const AddItem = () => {
       image: data.image,
       email: data.email,
     };
-    fetch("http://localhost:5000/additem", {
+    fetch("https://buy-online-server.vercel.app/additem", {
       method: "POST",
       headers: {
         "content-type": "application/json",

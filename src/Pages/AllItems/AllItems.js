@@ -7,7 +7,7 @@ const AllItems = () => {
   const [items, setItems] = useState([]);
   const [item, setItem] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/items")
+    fetch("https://buy-online-server.vercel.app/items")
       .then((res) => res.json())
       .then((data) => setItems(data));
   }, []);
@@ -15,13 +15,12 @@ const AllItems = () => {
 
   //for unsold items
   useEffect(() => {
-    fetch("http://localhost:5000/item")
+    fetch("https://buy-online-server.vercel.app/item")
       .then((res) => res.json())
       .then((data) => setItem(data));
   }, []);
 
   const handelMyOrder = (data) => {
-    console.log(data);
     const order = {
       name: data.name,
       price: data.price,
@@ -29,7 +28,7 @@ const AllItems = () => {
       image: data.image,
       email: user.email,
     };
-    fetch("http://localhost:5000/myorder", {
+    fetch("https://buy-online-server.vercel.app/myorder", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -38,9 +37,10 @@ const AllItems = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        toast.success("item added successfully");
+        toast.success("Order added successfully");
       });
   };
+
   return (
     <div>
       <h1 className="text-xl md:text-3xl my-10 lg:text-5xl text-green-500 text-center">

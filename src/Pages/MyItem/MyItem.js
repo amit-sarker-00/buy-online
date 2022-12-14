@@ -6,7 +6,7 @@ const MyItem = () => {
   //   console.log(user);
   const [myitems, setItems] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/items/${user?.email}`)
+    fetch(`https://buy-online-server.vercel.app/items/${user?.email}`)
       .then((res) => res.json())
       .then((data) => setItems(data));
   }, [user?.email]);
